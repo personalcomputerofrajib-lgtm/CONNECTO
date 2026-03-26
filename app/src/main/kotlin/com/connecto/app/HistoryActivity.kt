@@ -42,7 +42,7 @@ class HistoryActivity : AppCompatActivity() {
                 binding.emptyState.visibility = android.view.View.GONE
                 binding.rvHistory.adapter = HistoryAdapter(reports) { report ->
                     val intent = Intent(this@HistoryActivity, ReportActivity::class.java).apply {
-                        putExtra("reportId", report.id)
+                        putExtra("reportId", report.reportLogId)
                     }
                     startActivity(intent)
                 }
