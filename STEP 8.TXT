@@ -1,0 +1,28 @@
+STEP 8 DOCUMENTATION
+
+PROMPT: "Continue" (building remaining features)
+
+ACTIONS TAKEN:
+1. Created SplashActivity.kt — 2.5s branded splash screen navigating to MainActivity.
+2. Created activity_splash.xml — neon ring design with app name, tagline, and version label.
+3. Created drawable/circle_ring_outer.xml and circle_ring_inner.xml — neon oval rings for splash.
+4. Created ui/PainDetailDialog.kt — dialog for pain type, duration, and notes per region selection.
+5. Created layout/dialog_pain_detail.xml — styled dialog with spinner, EditText fields, save/cancel buttons.
+6. Created drawable/dialog_bg.xml — rounded dark dialog background.
+7. Created report/PdfExporter.kt — native Android PDF API exporter to Downloads folder (fully offline, no library).
+8. Updated AndroidManifest.xml: SplashActivity is now the launcher, MainActivity set to non-exported, WRITE_EXTERNAL_STORAGE permission added for PDF export.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED:
+- app/src/main/AndroidManifest.xml
+CODE WRITTEN:
+- SplashActivity.kt
+- ui/PainDetailDialog.kt
+- report/PdfExporter.kt
+- activity_splash.xml, dialog_pain_detail.xml
+- drawable/circle_ring_outer.xml, circle_ring_inner.xml, dialog_bg.xml
+
+NEXT STEPS:
+- Push all Step 8 changes to GitHub.
+- Wire PainDetailDialog into BodyMapView selection callback.
+- Add PDF export button to ReportActivity.
