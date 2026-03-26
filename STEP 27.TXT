@@ -1,0 +1,12 @@
+STEP 27 DOCUMENTATION — CLASS-BASED STABILIZATION COMPLETE
+
+FINAL ARCHITECTURE REFINEMENT:
+- Class-Based Entities: Converted `SelectionRecord` and `ReportLog` from Kotlin data classes to regular classes with explicit `var` properties and clear constructors. This eliminates metadata resolution issues in `kapt` and ensures Room can always generate valid DAO implementations via reflection.
+- Primary Key Disambiguation: Renamed internal primary key fields to `selectionId` and `reportLogId` to avoid any potential shadowing of the `id` name in the Room runtime or DataBinding stubs.
+- Kapt Configuration: Disabled incremental Room compilation and added `correctErrorTypes = true` to the `build.gradle` configuration to surface more detailed errors and stabilize the stub-generation phase.
+- Explicit Stdlib: Added an explicit `kotlin-stdlib` dependency to ensure the annotation processor environment matches the project's runtime environment exactly.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+BUILD STATUS: CONSOLIDATED & STABILIZED.
+
+Task Force: Antigravity HUD Upgrade Team.
