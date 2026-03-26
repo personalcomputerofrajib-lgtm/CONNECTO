@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000F">
+    android:background="@drawable/hud_grid_bg">
 
     <!-- HEADER -->
     <ImageButton
@@ -23,10 +23,10 @@
         android:id="@+id/reportTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REPORT"
+        android:text="DATA_LOG_REPORT"
         android:textColor="#00FFFF"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif-black"
+        android:textSize="18sp"
+        android:fontFamily="monospace"
         android:letterSpacing="0.3"
         android:layout_marginTop="40dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,13 +34,14 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- REPORT SCROLL -->
-    <ScrollView
-        android:id="@+id/reportScroll"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/btnBack"
-        app:layout_constraintBottom_toTopOf="@id/actionRow"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/reportTitle"
+        app:layout_constraintBottom_toTopOf="@id/actionsLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -48,59 +49,57 @@
             android:id="@+id/reportText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Loading..."
-            android:textColor="#CCDDEE"
+            android:textColor="#00FFCC"
             android:textSize="13sp"
             android:fontFamily="monospace"
-            android:padding="12dp"
-            android:background="#090E1A"
-            android:lineSpacingMultiplier="1.6"/>
+            android:lineSpacingExtra="4dp"
+            android:text="System Initializing..."/>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <!-- ACTION ROW -->
     <LinearLayout
-        android:id="@+id/actionRow"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:id="@+id/actionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="6dp"
-        android:background="#0A0A1A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/btnCopy"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="COPY"
-            android:textColor="#00FFFF"
-            android:textSize="11sp"
-            android:background="#001A1A"
-            android:layout_marginEnd="4dp"/>
-
-        <Button
-            android:id="@+id/btnPdf"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="SAVE PDF"
-            android:textColor="#FFDD00"
-            android:textSize="11sp"
-            android:background="#1A1400"
-            android:layout_marginEnd="4dp"/>
+            android:text="COPY_DATA"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:background="@drawable/btn_outline"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="monospace"/>
 
         <Button
             android:id="@+id/btnShare"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text="SHARE"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="UPLINK_DATA"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:background="@drawable/btn_outline"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="monospace"/>
+
+        <Button
+            android:id="@+id/btnPdf"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="EXPORT_HARDCOPY"
             android:textColor="#000000"
-            android:textSize="11sp"
-            android:background="#00FFCC"/>
+            android:textSize="10sp"
+            android:background="#00FFCC"
+            android:fontFamily="monospace"/>
 
     </LinearLayout>
 

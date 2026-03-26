@@ -1,67 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<?xml version="1.0" e<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000F"
-    android:fillViewport="true">
+    android:background="@drawable/hud_grid_bg">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PATIENT_DATA_ENTRY"
+        android:textColor="#00FFFF"
+        android:textSize="18sp"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.2"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp">
-
-        <!-- BACK BUTTON -->
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@android:drawable/ic_media_previous"
-            android:background="@drawable/btn_outline"
-            android:tint="#00FFFF"
-            android:layout_marginTop="32dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <!-- TITLE -->
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PATIENT INFO"
-            android:textColor="#00FFFF"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-black"
-            android:letterSpacing="0.25"
-            android:layout_marginTop="36dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <!-- REGION COUNT BADGE -->
-        <TextView
-            android:id="@+id/regionCountLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0 region(s) selected"
-            android:textColor="#00FFCC"
-            android:textSize="13sp"
-            android:background="@drawable/badge_bg"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/titleText"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <!-- DIVIDER -->
-        <View
-            android:id="@+id/divider1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
             android:background="#1A2A3A"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@id/regionCountLabel"
