@@ -22,4 +22,15 @@ class ReportLog(
     
     @ColumnInfo(name = "createdAt")
     var createdAt: String = ""
-)
+) {
+    fun copy(): ReportLog {
+        return ReportLog(
+            reportLogId = this.reportLogId,
+            patientName = this.patientName,
+            patientAge = this.patientAge,
+            patientGender = this.patientGender,
+            totalRegions = this.totalRegions,
+            createdAt = this.createdAt
+        )
+    }
+}

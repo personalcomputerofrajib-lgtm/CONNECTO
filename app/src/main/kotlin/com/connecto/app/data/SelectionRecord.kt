@@ -34,4 +34,30 @@ class SelectionRecord(
     
     @ColumnInfo(name = "notes")
     var notes: String = ""
-)
+) {
+    fun copy(
+        selectionId: Long = this.selectionId,
+        reportId: Long = this.reportId,
+        regionId: String = this.regionId,
+        commonName: String = this.commonName,
+        medicalName: String = this.medicalName,
+        side: String = this.side,
+        orientation: String = this.orientation,
+        painType: String = this.painType,
+        duration: String = this.duration,
+        notes: String = this.notes
+    ): SelectionRecord {
+        return SelectionRecord(
+            selectionId = selectionId,
+            reportId = reportId,
+            regionId = regionId,
+            commonName = commonName,
+            medicalName = medicalName,
+            side = side,
+            orientation = orientation,
+            painType = painType,
+            duration = duration,
+            notes = notes
+        )
+    }
+}
