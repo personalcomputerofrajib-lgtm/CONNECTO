@@ -1,0 +1,34 @@
+STEP 6 DOCUMENTATION
+
+PROMPT: "GO BUILD START" — Begin all core implementation.
+
+ACTIONS TAKEN:
+1. Created engine/BodyRegion.kt — core data models (BodyRegion, Side, Orientation, BodyLayer, DetectionResult).
+2. Created engine/BodyMap.kt — complete anatomical map of all body regions (25+ anterior + posterior regions), with normalized polygon coordinates.
+3. Created engine/AnatomicalEngine.kt — ray-casting polygon detection, paint-area heatmap analysis, and nearest-region snap.
+4. Created data/Entities.kt — Room DB entities (SelectionEntity, ReportEntity).
+5. Created data/Daos.kt — Room DAOs for selections and reports.
+6. Created data/ConnectoDatabase.kt — Room singleton database.
+7. Created ui/BodyMapView.kt — interactive custom View (tap/paint/multi-select, neon overlays, pulse animation, labels).
+8. Updated MainActivity.kt — wired all controls (mode switcher, clear, undo, report, front/back toggle).
+9. Updated activity_main.xml — full dark/neon UI layout (body map, region info card, action bar).
+10. Created drawable/btn_outline.xml — neon outline drawable.
+11. Created report/ReportGenerator.kt — offline rule-based sentence + structured report generator.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED:
+- app/src/main/kotlin/com/connecto/app/MainActivity.kt
+- app/src/main/res/layout/activity_main.xml
+CODE WRITTEN:
+- engine/BodyRegion.kt
+- engine/BodyMap.kt
+- engine/AnatomicalEngine.kt
+- data/Entities.kt, Daos.kt, ConnectoDatabase.kt
+- ui/BodyMapView.kt
+- report/ReportGenerator.kt
+- drawable/btn_outline.xml
+
+NEXT STEPS:
+- Push to GitHub to trigger Actions CI build.
+- Add kapt for Room annotation processing in build.gradle.
+- Implement PatientInfoActivity + Report screen.
