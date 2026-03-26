@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -44,7 +45,10 @@ dependencies {
     // Room for offline storage
     implementation "androidx.room:room-runtime:2.5.2"
     implementation "androidx.room:room-ktx:2.5.2"
-    annotationProcessor "androidx.room:room-compiler:2.5.2"
+    kapt "androidx.room:room-compiler:2.5.2"
+
+    // CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

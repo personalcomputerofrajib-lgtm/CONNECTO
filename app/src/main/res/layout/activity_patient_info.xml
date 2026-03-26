@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000F"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- BACK BUTTON -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="@drawable/btn_outline"
+            android:tint="#00FFFF"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- TITLE -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PATIENT INFO"
+            android:textColor="#00FFFF"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.25"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- REGION COUNT BADGE -->
+        <TextView
+            android:id="@+id/regionCountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 region(s) selected"
+            android:textColor="#00FFCC"
+            android:textSize="13sp"
+            android:background="@drawable/badge_bg"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- DIVIDER -->
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#1A2A3A"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/regionCountLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- NAME -->
+        <TextView
+            android:id="@+id/labelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FULL NAME"
+            android:textColor="#667799"
+            android:textSize="11sp"
+            android:letterSpacing="0.2"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/divider1"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:boxStrokeColor="#00FFFF"
+            app:hintTextColor="#00FFFF"
+            app:layout_constraintTop_toBottomOf="@id/labelName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:inputType="textPersonName"
+                android:hint="e.g. Rajib"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- AGE -->
+        <TextView
+            android:id="@+id/labelAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AGE"
+            android:textColor="#667799"
+            android:textSize="11sp"
+            android:letterSpacing="0.2"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tilName"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAge"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:boxStrokeColor="#00FFFF"
+            app:hintTextColor="#00FFFF"
+            app:layout_constraintTop_toBottomOf="@id/labelAge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:inputType="number"
+                android:hint="e.g. 25"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- GENDER -->
+        <TextView
+            android:id="@+id/labelGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GENDER"
+            android:textColor="#667799"
+            android:textSize="11sp"
+            android:letterSpacing="0.2"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tilAge"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/btn_outline"
+            android:paddingStart="12dp"
+            android:entries="@array/gender_options"
+            app:layout_constraintTop_toBottomOf="@id/labelGender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- GENERATE BUTTON -->
+        <Button
+            android:id="@+id/btnGenerateReport"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="GENERATE REPORT →"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="#00FFCC"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@id/spinnerGender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -91,11 +91,14 @@ class MainActivity : AppCompatActivity() {
         binding.btnReport.setOnClickListener {
             val selections = binding.bodyMapView.getSelections()
             if (selections.isEmpty()) {
-                Toast.makeText(this, "Please select at least one area.", Toast.LENGTH_SHORT).show()
+                android.widget.Toast.makeText(this, "Please select at least one area.", android.widget.Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            // Open PatientInfoActivity / Report screen (next step)
-            Toast.makeText(this, "Report ready: ${selections.size} region(s)", Toast.LENGTH_SHORT).show()
+            SessionManager.setFromDetections(selections)
+            val intent = android.content.Intent(this, PatientInfoActivity::class.java).apply {
+                putExtra("regionCount", selections.size)
+            }
+            startActivity(intent)
         }
     }
 
