@@ -129,9 +129,16 @@ class BodyMapView @JvmOverloads constructor(
     }
 
     private fun drawInternalDetail(canvas: Canvas, region: BodyRegion, w: Float, h: Float) {
-        val bounds = region.getBounds()
-        val cx = bounds.centerX() * w
-        val cy = bounds.centerY() * h
+        val pts = region.polygon
+        if (pts.isEmpty()) return
+        
+        val minX = pts.minOf { it.first }
+        val maxX = pts.maxOf { it.first }
+        val minY = pts.minOf { it.second }
+        val maxY = pts.maxOf { it.second }
+        
+        val cx = ((minX + maxX) / 2f) * w
+        val cy = ((minY + maxY) / 2f) * h
         bodyStrokePaint.strokeWidth = 1f
         canvas.drawCircle(cx, cy, 8f, bodyStrokePaint)
         bodyStrokePaint.strokeWidth = 2f
