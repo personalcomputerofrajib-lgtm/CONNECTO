@@ -9,12 +9,12 @@ import androidx.room.*
 @Entity(tableName = "selections")
 data class SelectionEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val reportId: Long,
-    val regionId: String,
-    val commonName: String,
-    val medicalName: String,
-    val side: String,
-    val orientation: String,
+    val reportId: Long = 0L,
+    val regionId: String = "",
+    val commonName: String = "",
+    val medicalName: String = "",
+    val side: String = "",
+    val orientation: String = "",
     @ColumnInfo(name = "painType") val painType: String = "",
     @ColumnInfo(name = "duration") val duration: String = "",
     @ColumnInfo(name = "notes") val notes: String = ""
@@ -23,11 +23,11 @@ data class SelectionEntity(
 @Entity(tableName = "reports")
 data class ReportEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val patientName: String,
-    @ColumnInfo(defaultValue = "0") val patientAge: String,
-    val patientGender: String,
-    @ColumnInfo(defaultValue = "0") val totalRegions: Int,
-    val createdAt: String
+    val patientName: String = "",
+    @ColumnInfo(defaultValue = "0") val patientAge: String = "0",
+    val patientGender: String = "Unknown",
+    @ColumnInfo(defaultValue = "0") val totalRegions: Int = 0,
+    val createdAt: String = ""
 )
 
 /**
