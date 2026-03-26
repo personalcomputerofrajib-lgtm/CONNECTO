@@ -32,19 +32,19 @@ class ReportActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val db = ConnectoDatabase.getInstance(this@ReportActivity)
-            val reportEntity = db.reportDao().getReportById(reportId) 
+            val reportLog = db.reportDao().getReportById(reportId) 
             val selections = db.selectionDao().getSelectionsForReport(reportId)
 
-            if (reportEntity == null) {
+            if (reportLog == null) {
                 Toast.makeText(this@ReportActivity, "Report not found", Toast.LENGTH_SHORT).show()
                 finish()
                 return@launch
             }
 
-            val name = reportEntity.patientName
-            val age = reportEntity.patientAge
-            val gender = reportEntity.patientGender
-            val date = reportEntity.createdAt
+            val name = reportLog.patientName
+            val age = reportLog.patientAge
+            val gender = reportLog.patientGender
+            val date = reportLog.createdAt
 
             val reportText = ReportGenerator.generateStructuredReport(name, age, gender, selections, date)
             binding.reportText.text = reportText
