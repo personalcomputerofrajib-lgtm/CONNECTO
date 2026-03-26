@@ -1,0 +1,25 @@
+STEP 10 DOCUMENTATION
+
+PROMPT: (User shared GitHub Actions build failure screenshot)
+
+ERROR OBSERVED:
+- GitHub Actions CI #5 failed at step "Grant execute permission for gradlew"
+- Error: chmod: cannot access 'gradlew': No such file or directory
+- Root cause: gradlew (Gradle wrapper) binary was never committed — it can't be 
+  generated without a local Gradle installation.
+
+ACTIONS TAKEN:
+1. Identified the root cause: the workflow tried to `chmod +x gradlew` but the file 
+   does not exist in the repository.
+2. Updated .github/workflows/android.yml to:
+   - Remove the broken chmod gradlew step
+   - Add `gradle/gradle-build-action@v2` which installs Gradle 8.1.1 automatically
+   - Run `gradle build` directly instead of `./gradlew build`
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED:
+- .github/workflows/android.yml (Fixed CI workflow)
+
+NEXT STEPS:
+- Push the fixed workflow to GitHub to trigger a new build.
+- Monitor GitHub Actions for build success.
