@@ -21,6 +21,7 @@
         <activity android:name=".MainActivity" android:exported="false"/>
         <activity android:name=".PatientInfoActivity" android:exported="false"/>
         <activity android:name=".ReportActivity" android:exported="false"/>
+        <activity android:name=".HistoryActivity" android:exported="false"/>
     </application>
 
 </manifest>

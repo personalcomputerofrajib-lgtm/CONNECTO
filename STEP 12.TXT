@@ -1,0 +1,37 @@
+STEP 12 DOCUMENTATION
+
+PROMPT: "Continue"
+
+ACTIONS TAKEN:
+1. Integrated Room DB into full UI flow:
+   - Updated PatientInfoActivity to save reports and selections to Room using coroutines.
+   - Updated ReportActivity to load data from Room using reportId instead of in-memory session.
+   - Fixed ReportDao: added getReportById(id) method.
+2. Implemented History Screen:
+   - Created HistoryActivity.kt — fetches all past reports from DB.
+   - Created HistoryAdapter.kt — RecyclerView adapter for report list.
+   - Created layout/activity_history.xml — styled history list screen.
+   - Created layout/item_history.xml — neon/dark styled card for report items.
+3. Updated MainActivity:
+   - Added history icon button to the top toolbar.
+   - Wired button to launch HistoryActivity.
+4. Updated AndroidManifest.xml: registered HistoryActivity.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED:
+- MainActivity.kt (Added History button logic)
+- PatientInfoActivity.kt (Added Room saving logic)
+- ReportActivity.kt (Added Room loading logic)
+- Daos.kt (Added getReportById)
+- AndroidManifest.xml (HistoryActivity registered)
+- activity_main.xml (Added History button UI)
+CODE WRITTEN:
+- HistoryActivity.kt
+- HistoryAdapter.kt
+- activity_history.xml
+- item_history.xml
+
+NEXT STEPS:
+- Push Step 12 to GitHub.
+- Final UI polish (animations, color fine-tuning).
+- Verify all features offline.
