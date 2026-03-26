@@ -1,0 +1,21 @@
+STEP 4 DOCUMENTATION
+
+PROMPT: "WHICH LANGYUAGE WE USING CAUSE WE WILL USE GITHUB APP BUILD ALSO NOTED IT TO NOT FORGET WE WILL DO DO NOTHING IN PC"
+
+ACTIONS TAKEN:
+1. Confirmed the programming language: **Kotlin** (for Android).
+2. Acknowledged the build process constraint: **No local builds on the PC**.
+3. Noted that building/deployment will be handled via **GitHub App Build / GitHub Actions**.
+4. Updated project tracking to prioritize remote build/verification workflows.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED: None (Configuration/Workflow agreement).
+CODE WRITTEN:
+- STEP 4.TXT: This documentation file.
+- task.md (Updated)
+- implementation_plan.md (Updated)
+
+NEXT STEPS:
+- Wait for the user to provide the Android project architecture (folders + files).
+- Start creating the directory structure and initial Kotlin files.
+- Ensure all CI/CD configuration (e.g., .github/workflows) is part of the implementation plan.

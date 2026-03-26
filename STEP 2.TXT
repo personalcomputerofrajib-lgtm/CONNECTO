@@ -5,17 +5,17 @@ GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
 
 ACTIONS TAKEN:
 1. Initialized local Git repository.
-2. Created README.md with the title "# CONNECTO".
-3. Staged and committed README.md as "first commit".
-4. Renamed default branch to "main".
-5. Added remote "origin" pointing to https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git.
+2. Created README.md and established initial project structure.
+3. Configured local Git user (Rajib) for committing.
+4. Committed all files including documentation and tracking artifacts.
+5. Successfully pushed to https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git on the 'main' branch.
 
 GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
-CODE CHANGED: Added README.md
+CODE CHANGED: Added README.md, STEP 1.TXT, STEP 2.TXT
 CODE WRITTEN:
-- README.md: Added project title.
-- STEP 2.TXT: This documentation file.
+- README.md: Initial project title.
+- STEP 2.TXT: Updated with push confirmation.
 
+STATUS: SUCCESSFULLY PUSHED TO GITHUB.
 NEXT STEPS:
-- Push the initial commit to the remote repository.
-- Wait for further instructions on what features to implement in CONNECTO.
+- Wait for the user to provide coding tasks for the CONNECTO application.

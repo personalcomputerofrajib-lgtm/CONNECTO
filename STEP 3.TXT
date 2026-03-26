@@ -1,0 +1,20 @@
+STEP 3 DOCUMENTATION
+
+PROMPT: Full high-level system design for CONNECTO (Medical Communication Interface).
+
+ACTIONS TAKEN:
+1. Analyzed the "CONNECTO" system design provided by the user.
+2. Identified key components: Anatomical Mapping Engine, Interaction Engine (Tap/Paint), Interface System (Dark/Neon Blue), Detection Logic, and Report Generation.
+3. Noted the technical requirements: Android (Kotlin), Offline-first, Rule-based intelligence.
+4. Updated project tracking artifacts to reflect the new scope.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED: None (Planning phase).
+CODE WRITTEN:
+- STEP 3.TXT: This documentation file.
+- task.md (Updated)
+- implementation_plan.md (Updated)
+
+NEXT STEPS:
+- Request "next build step" to receive the Android project architecture (folders + files).
+- Begin setting up the Android project structure.
