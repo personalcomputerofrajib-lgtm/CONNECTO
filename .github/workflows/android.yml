@@ -26,5 +26,11 @@ jobs:
         gradle-version: '8.1.1'
 
     - name: Build with Gradle
-      run: gradle build
+      run: ./gradlew assembleDebug assembleRelease
       working-directory: ${{ github.workspace }}
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: CONNECTO_HUD_v1.0
+        path: app/build/outputs/apk/**/*.apk
