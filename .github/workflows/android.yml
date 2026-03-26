@@ -26,7 +26,7 @@ jobs:
         gradle-version: '8.1.1'
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug assembleRelease
+      run: gradle assembleDebug assembleRelease
       working-directory: ${{ github.workspace }}
 
     - name: Upload APK
