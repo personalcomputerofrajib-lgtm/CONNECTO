@@ -1,0 +1,24 @@
+STEP 15 DOCUMENTATION
+
+PROMPT: (User shared Build Failure Screenshot CI #10)
+
+ERROR OBSERVED:
+- Build failed in task `:app:kaptDebugKotlin`.
+- Error in ReportDao: Query returns columns [id, ... createdAt] which are not used by java.lang.Object.
+- Root cause: Mismatch between ReportEntity constructor, the data being inserted, and the Room query results. ReportEntity was missing `totalRegions` and had `createdAt` as a Long instead of String.
+
+ACTIONS TAKEN:
+1. Updated Entities.kt:
+   - Modified `ReportEntity` to include `totalRegions: Int`.
+   - Changed `createdAt` type from `Long` to `String` to match the formatted date strings being used.
+2. Verified `ReportDao` in Daos.kt (already correct but was failing due to the entity mismatch).
+3. Prepared the fix for Step 16 (Starting HUD transformation).
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE MODIFIED:
+- app/src/main/kotlin/com/connecto/app/data/Entities.kt
+
+NEXT STEPS:
+- Push the build error fix.
+- Verify the build succeeds.
+- Start the Advanced HUD interface transformation as planned in Step 14.

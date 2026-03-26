@@ -29,5 +29,6 @@ data class ReportEntity(
     val patientName: String,
     val patientAge: String,
     val patientGender: String,
-    val createdAt: Long = System.currentTimeMillis()
+    val totalRegions: Int,
+    val createdAt: String
 )
