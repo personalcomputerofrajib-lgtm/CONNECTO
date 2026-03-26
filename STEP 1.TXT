@@ -1,0 +1,20 @@
+STEP 1 DOCUMENTATION
+
+PROMPT: Initialize project tracking and acknowledge the rule: "All steps will be written in TXT file per prompt 1 step like STEP 1.TXT".
+
+ACTIONS TAKEN:
+1. Checked current directory: c:\Users\perso\Downloads\555555555555 (Current state: Empty).
+2. Created task.md: To track long-term progress.
+3. Created implementation_plan.md: To document planned changes.
+4. Created STEP 1.TXT: This file, documenting the work done in this prompt.
+
+GITHUB REPO: Not yet specified or initialized.
+CODE CHANGED: None (Initializing documentation).
+CODE WRITTEN:
+- task.md (Artifact)
+- implementation_plan.md (Artifact)
+- STEP 1.TXT (Local File)
+
+NEXT STEPS:
+- Wait for the user to provide project details or a GitHub repository to clone.
+- Continue documenting every prompt in sequential STEP X.TXT files.
