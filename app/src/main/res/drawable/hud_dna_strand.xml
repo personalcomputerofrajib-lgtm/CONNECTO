@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HUD DNA Strand Decoration
+     Two interlocking sine waves in neon cyan and electric blue. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="200dp"
+    android:viewportWidth="40"
+    android:viewportHeight="200">
+
+    <!-- Strand 1 (Sine Wave) -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:alpha="0.65"
+        android:pathData="M20,0 C32,20 8,30 20,50 C32,70 8,80 20,100 C32,120 8,130 20,150 C32,170 8,180 20,200"/>
+
+    <!-- Strand 2 (Mirror Sine Wave) -->
+    <path
+        android:strokeColor="#00A0FF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:alpha="0.65"
+        android:pathData="M20,0 C8,20 32,30 20,50 C8,70 32,80 20,100 C8,120 32,130 20,150 C8,170 32,180 20,200"/>
+
+    <!-- Connecting Bonds -->
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,12 L26,12"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,37 L26,37"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,62 L26,62"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,87 L26,87"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,112 L26,112"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,137 L26,137"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,162 L26,162"/>
+    <path android:strokeColor="#00FFFF" android:strokeWidth="1" android:alpha="0.3" android:pathData="M14,187 L26,187"/>
+
+</vector>

@@ -1,10 +1,12 @@
 package com.connecto.app.ui
 
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.view.animation.LinearInterpolator
 import com.connecto.app.engine.*
 
 /**
@@ -17,13 +19,21 @@ class BodyMapView @JvmOverloads constructor(
 
     // ─── Mode ─────────────────────────────────────────────────────────────────
     enum class InteractionMode { TAP, PAINT, MULTI_SELECT }
+    enum class AnatomicalLayer { SKIN, MUSCLES, ORGANS, SKELETAL }
 
-    var interactionMode = InteractionMode.TAP
-    var currentOrientation = Orientation.ANTERIOR
-        set(value) { field = value; invalidate() }
+    var interactionMode: InteractionMode = InteractionMode.TAP
+    var currentOrientation: Orientation = Orientation.ANTERIOR
+        set(value) {
+            field = value
+            invalidate()
+        }
+    var currentLayer: AnatomicalLayer = AnatomicalLayer.SKIN
+        set(value) {
+            field = value
+            invalidate()
+        }
 
-    // ─── Selections ───────────────────────────────────────────────────────────
-    private val selectedRegions = mutableListOf<DetectionResult>()
+    private val detections = mutableListOf<DetectionResult>()
     private val paintPoints = mutableListOf<PointF>()
 
     // ─── Listener ─────────────────────────────────────────────────────────────
@@ -76,30 +86,93 @@ class BodyMapView @JvmOverloads constructor(
     private var pulseRadius = 10f
     private var pulseGrowing = true
 
+    // Paints
+    private val bodyPaint = Paint().apply {
+        color = Color.parseColor("#1A3A4A")
+        style = Paint.Style.STROKE
+        strokeWidth = 2f
+        isAntiAlias = true
+    }
+
+    private val scanLinePaint = Paint().apply {
+        color = Color.RED
+        strokeWidth = 3f
+        setShadowLayer(10f, 0f, 0f, Color.RED)
+    }
+
+    private var scanLineY = 0f
+    private val scanAnimator = ValueAnimator.ofFloat(0f, 1f).apply {
+        duration = 3000
+        repeatCount = ValueAnimator.INFINITE
+        repeatMode = ValueAnimator.REVERSE
+        interpolator = LinearInterpolator()
+        addUpdateListener {
+            scanLineY = it.animatedValue as Float
+            invalidate()
+        }
+    }
+
+    init {
+        scanAnimator.start()
+    }
+
     // ─── Drawing ──────────────────────────────────────────────────────────────
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        // Draw subtle grid
-        drawGrid(canvas)
+        val w = width.toFloat()
+        val h = height.toFloat()
 
-        // Draw region outlines
-        drawRegionOutlines(canvas)
+        drawBodySilhouettes(canvas, w, h)
+        drawDetections(canvas, w, h)
+        drawScanningLine(canvas, w, h)
+    }
 
-        // Draw selected regions highlight
-        drawSelectedRegions(canvas)
-
-        // Draw paint trail
-        if (paintPoints.isNotEmpty()) {
-            canvas.drawPath(paintPath, paintTrailPaint)
+    private fun drawBodySilhouettes(canvas: Canvas, w: Float, h: Float) {
+        val regions = BodyMap.getRegions(currentOrientation)
+        
+        // Change body color based on layer
+        val layerColor = when(currentLayer) {
+            AnatomicalLayer.SKIN -> "#1A3A4A"
+            AnatomicalLayer.MUSCLES -> "#4A1A1A"
+            AnatomicalLayer.ORGANS -> "#1A4A3A"
+            AnatomicalLayer.SKELETAL -> "#4A4A4A"
         }
+        bodyPaint.color = Color.parseColor(layerColor)
 
-        // Draw markers and labels
-        drawMarkersAndLabels(canvas)
+        regions.forEach { region ->
+            val path = Path()
+            region.polygon.forEachIndexed { i, p ->
+                val px = p.first * w
+                val py = p.second * h
+                if (i == 0) path.moveTo(px, py) else path.lineTo(px, py)
+            }
+            path.close()
+            canvas.drawPath(path, bodyPaint)
+            
+            // Draw stylized internal "structure" if not skin
+            if (currentLayer != AnatomicalLayer.SKIN) {
+                drawLayerDetails(canvas, region, w, h)
+            }
+        }
+    }
 
-        // Animate pulse
-        animatePulse()
+    private fun drawLayerDetails(canvas: Canvas, region: BodyRegion, w: Float, h: Float) {
+        // Simplified procedural detail drawing for internal layers
+        bodyPaint.strokeWidth = 1f
+        bodyPaint.alpha = 50
+        val bounds = region.getBounds()
+        val cx = bounds.centerX() * w
+        val cy = bounds.centerY() * h
+        canvas.drawCircle(cx, cy, 10f, bodyPaint)
+        bodyPaint.strokeWidth = 2f
+        bodyPaint.alpha = 255
+    }
+
+    private fun drawScanningLine(canvas: Canvas, w: Float, h: Float) {
+        val y = scanLineY * h
+        canvas.drawLine(0f, y, w, y, scanLinePaint)
     }
 
     private fun drawGrid(canvas: Canvas) {
@@ -120,8 +193,8 @@ class BodyMapView @JvmOverloads constructor(
         }
     }
 
-    private fun drawSelectedRegions(canvas: Canvas) {
-        for (result in selectedRegions) {
+    private fun drawDetections(canvas: Canvas, w: Float, h: Float) {
+        for (result in detections) {
             val path = regionToPath(result.region.polygon)
             canvas.drawPath(path, selectedFillPaint)
         }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Advanced Medical HUD Grid Background
+     Combines a deep navy gradient with a subtle electric-cyan hex grid. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base Gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="400dp"
+                android:startColor="#0A1F2A"
+                android:centerColor="#040F1A"
+                android:endColor="#00050F"
+                android:centerX="0.5"
+                android:centerY="0.5"/>
+        </shape>
+    </item>
+
+    <!-- Horizontal Lines -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="0.5dp" android:color="#0D2A3A" />
+        </shape>
+    </item>
+
+    <!-- Hexagonal / Dots overlay (simulated) -->
+    <item>
+        <bitmap
+            android:src="@drawable/hex_pattern_tile"
+            android:tileMode="repeat"
+            android:alpha="0.1" />
+    </item>
+</layer-list>
