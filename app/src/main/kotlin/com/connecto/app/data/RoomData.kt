@@ -35,7 +35,7 @@ interface SelectionDao {
     suspend fun delete(selection: SelectionRecord)
 
     @Query("SELECT * FROM selections WHERE reportId = :reportId")
-    suspend fun getSelectionsForReport(reportId: Long): List<SelectionRecord>
+    suspend fun getSelectionsForReport(reportId: Long): List<@JvmSuppressWildcards SelectionRecord>
 
     @Query("DELETE FROM selections WHERE reportId = :reportId")
     suspend fun clearForReport(reportId: Long)
@@ -47,7 +47,7 @@ interface ReportDao {
     suspend fun insert(report: ReportLog): Long
 
     @Query("SELECT * FROM reports ORDER BY createdAt DESC")
-    suspend fun getAllReports(): List<ReportLog>
+    suspend fun getAllReports(): List<@JvmSuppressWildcards ReportLog>
 
     @Query("SELECT * FROM reports WHERE id = :id")
     suspend fun getReportById(id: Long): ReportLog?

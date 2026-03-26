@@ -6,6 +6,9 @@ plugins {
 
 kapt {
     correctErrorTypes = true
+    arguments {
+        arg("room.incremental", "false")
+    }
 }
 
 android {
