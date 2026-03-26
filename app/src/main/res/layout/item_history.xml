@@ -4,34 +4,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardBackgroundColor="#0A1520"
-    app:cardCornerRadius="12dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#CC0D1B2A"
+    app:cardCornerRadius="4dp"
     app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/tvPatientName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Patient Name"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-medium"/>
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="26 Mar 2026 · 3 regions"
-            android:textColor="#667788"
-            android:textSize="12sp"
-            android:layout_marginTop="4dp"/>
+            android:text="SCAN_DATE: 2026-03-26"
+            android:textColor="#778899"
+            android:textSize="10sp"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PATIENT: RAJIB"
+            android:textColor="#00FFFF"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/tvDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NODES_SELECTED: 5"
+            android:textColor="#00FFCC"
+            android:textSize="11sp"
+            android:fontFamily="monospace"/>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
