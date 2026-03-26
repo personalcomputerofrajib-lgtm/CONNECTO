@@ -1,0 +1,20 @@
+STEP 9 DOCUMENTATION
+
+PROMPT: Wiring remaining features into the full app flow.
+
+ACTIONS TAKEN:
+1. Wired PainDetailDialog into MainActivity.setupBodyMap() — now automatically shown after every body region tap/paint selection.
+2. Updated SessionManager integration — painType, duration, notes stored per selection.
+3. Added btnPdf click handler to ReportActivity — calls PdfExporter and shows save path or error.
+4. Updated activity_report.xml — added "SAVE PDF" button to the action bar (yellow, alongside COPY and SHARE).
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE CHANGED:
+- MainActivity.kt (PainDetailDialog wired into body map selection)
+- ReportActivity.kt (PDF export button added)
+- activity_report.xml (SAVE PDF button added to layout)
+
+NEXT STEPS:
+- Push all Step 9 changes to GitHub.
+- App is functionally complete (Core + UI + Report Flow + Splash + Pain Dialog + PDF Export).
+- Check GitHub Actions build status.

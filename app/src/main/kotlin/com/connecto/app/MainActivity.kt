@@ -36,9 +36,27 @@ class MainActivity : AppCompatActivity() {
                 binding.regionMedical.text = top.region.medicalName
                 binding.regionSide.text = "${top.region.side} · ${top.region.orientation}"
                 binding.selectionCount.text = "${results.size} area(s) selected"
-                binding.regionInfoCard.visibility = View.VISIBLE
+                binding.regionInfoCard.visibility = android.view.View.VISIBLE
+
+                // Show pain detail dialog for the top selection
+                com.connecto.app.ui.PainDetailDialog(
+                    this,
+                    top.region.commonName
+                ) { painType, duration, notes ->
+                    SessionManager.setFromDetections(results)
+                    // Update pain details on first selection
+                    val updated = SessionManager.currentSelections.toMutableList()
+                    if (updated.isNotEmpty()) {
+                        updated[0] = updated[0].copy(
+                            painType = painType,
+                            duration = duration,
+                            notes = notes
+                        )
+                        SessionManager.currentSelections = updated
+                    }
+                }.show()
             } else {
-                binding.regionInfoCard.visibility = View.GONE
+                binding.regionInfoCard.visibility = android.view.View.GONE
             }
         }
     }

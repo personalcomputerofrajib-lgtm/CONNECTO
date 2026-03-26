@@ -49,5 +49,14 @@ class ReportActivity : AppCompatActivity() {
             clipboard.setPrimaryClip(android.content.ClipData.newPlainText("CONNECTO Report", report))
             Toast.makeText(this, "Report copied!", Toast.LENGTH_SHORT).show()
         }
+
+        binding.btnPdf.setOnClickListener {
+            val path = com.connecto.app.report.PdfExporter.exportToPdf(this, report, name)
+            if (path != null) {
+                Toast.makeText(this, "PDF saved: $path", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "PDF export failed. Check permissions.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

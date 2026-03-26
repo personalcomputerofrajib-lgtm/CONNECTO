@@ -77,18 +77,29 @@
             android:layout_weight="1"
             android:text="COPY"
             android:textColor="#00FFFF"
-            android:textSize="12sp"
+            android:textSize="11sp"
             android:background="#001A1A"
-            android:layout_marginEnd="6dp"/>
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnPdf"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="SAVE PDF"
+            android:textColor="#FFDD00"
+            android:textSize="11sp"
+            android:background="#1A1400"
+            android:layout_marginEnd="4dp"/>
 
         <Button
             android:id="@+id/btnShare"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="SHARE REPORT"
+            android:text="SHARE"
             android:textColor="#000000"
-            android:textSize="12sp"
+            android:textSize="11sp"
             android:background="#00FFCC"/>
 
     </LinearLayout>
