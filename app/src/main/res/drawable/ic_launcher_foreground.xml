@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CONNECTO App Icon — Foreground Layer
+     Neon cyan human body silhouette with radiating connection nodes -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer pulse ring -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00FFFF"
+        android:strokeAlpha="0.5"
+        android:strokeWidth="1.5"
+        android:pathData="M54,10 A44,44 0 1,0 54,98 A44,44 0 1,0 54,10 Z"/>
+
+    <!-- Inner glow ring -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00FFCC"
+        android:strokeAlpha="0.8"
+        android:strokeWidth="2.5"
+        android:pathData="M54,18 A36,36 0 1,0 54,90 A36,36 0 1,0 54,18 Z"/>
+
+    <!-- Head -->
+    <path
+        android:fillColor="#00FFFF"
+        android:fillAlpha="0.9"
+        android:pathData="M54,24 A7,7 0 0,1 54,38 A7,7 0 0,1 54,24 Z"/>
+
+    <!-- Body (torso) -->
+    <path
+        android:fillColor="#00FFCC"
+        android:fillAlpha="0.85"
+        android:pathData="M48,40 L60,40 L63,62 L57,62 L57,75 L51,75 L51,62 L45,62 Z"/>
+
+    <!-- Left arm -->
+    <path
+        android:fillColor="#00FFFF"
+        android:fillAlpha="0.8"
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="1"
+        android:pathData="M48,41 L37,50 L34,64"/>
+
+    <!-- Right arm -->
+    <path
+        android:fillColor="#00FFFF"
+        android:fillAlpha="0.8"
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="1"
+        android:pathData="M60,41 L71,50 L74,64"/>
+
+    <!-- Left leg -->
+    <path
+        android:fillColor="#00FFCC"
+        android:fillAlpha="0.8"
+        android:strokeColor="#00FFCC"
+        android:strokeWidth="1"
+        android:pathData="M50,75 L46,90"/>
+
+    <!-- Right leg -->
+    <path
+        android:fillColor="#00FFCC"
+        android:fillAlpha="0.8"
+        android:strokeColor="#00FFCC"
+        android:strokeWidth="1"
+        android:pathData="M58,75 L62,90"/>
+
+    <!-- Connection dots (network nodes) -->
+    <path android:fillColor="#00FFFF" android:pathData="M34,64 A3,3 0 1,0 34,70 A3,3 0 1,0 34,64 Z"/>
+    <path android:fillColor="#00FFFF" android:pathData="M71,64 A3,3 0 1,0 71,70 A3,3 0 1,0 71,64 Z"/>
+    <path android:fillColor="#00FFCC" android:pathData="M44,90 A3,3 0 1,0 44,96 A3,3 0 1,0 44,90 Z"/>
+    <path android:fillColor="#00FFCC" android:pathData="M60,90 A3,3 0 1,0 60,96 A3,3 0 1,0 60,90 Z"/>
+
+    <!-- Radiating dots -->
+    <path android:fillColor="#00FFFF" android:fillAlpha="0.5" android:pathData="M22,30 A2,2 0 0,1 22,34 A2,2 0 0,1 22,30 Z"/>
+    <path android:fillColor="#00FFFF" android:fillAlpha="0.5" android:pathData="M84,30 A2,2 0 0,1 84,34 A2,2 0 0,1 84,30 Z"/>
+    <path android:fillColor="#00FFCC" android:fillAlpha="0.5" android:pathData="M20,54 A2,2 0 0,1 20,58 A2,2 0 0,1 20,54 Z"/>
+    <path android:fillColor="#00FFCC" android:fillAlpha="0.5" android:pathData="M86,54 A2,2 0 0,1 86,58 A2,2 0 0,1 86,54 Z"/>
+
+    <!-- Connecting lines to radiating dots -->
+    <path android:strokeColor="#00FFFF" android:strokeAlpha="0.3" android:strokeWidth="0.8"
+          android:pathData="M34,64 L22,32"/>
+    <path android:strokeColor="#00FFFF" android:strokeAlpha="0.3" android:strokeWidth="0.8"
+          android:pathData="M71,64 L84,32"/>
+    <path android:strokeColor="#00FFCC" android:strokeAlpha="0.3" android:strokeWidth="0.8"
+          android:pathData="M34,64 L20,56"/>
+    <path android:strokeColor="#00FFCC" android:strokeAlpha="0.3" android:strokeWidth="0.8"
+          android:pathData="M71,64 L86,56"/>
+
+</vector>

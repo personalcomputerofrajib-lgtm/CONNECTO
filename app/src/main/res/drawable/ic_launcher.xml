@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Legacy placeholder for API < 26 devices: simple vector icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#00050F"
+        android:pathData="M0,0 L48,0 L48,48 L0,48 Z"/>
+    <path
+        android:fillColor="#00FFFF"
+        android:pathData="M24,6 A6,6 0 1,0 24,18 A6,6 0 1,0 24,6 Z"/>
+    <path
+        android:fillColor="#00FFCC"
+        android:strokeColor="#00FFCC"
+        android:strokeWidth="2"
+        android:pathData="M21,19 L27,19 L29,34 L25,34 L25,42 L23,42 L23,34 L19,34 Z"/>
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:pathData="M21,20 L15,25 L13,33"/>
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:pathData="M27,20 L33,25 L35,33"/>
+</vector>
