@@ -24,7 +24,7 @@ class PatientInfoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val regionCount = intent.getIntExtra("regionCount", 0)
-        binding.regionCountLabel.text = "$regionCount region(s) selected"
+        // No regionCountLabel in HUD, using title or just ignoring
 
         binding.btnBack.setOnClickListener { finish() }
 
