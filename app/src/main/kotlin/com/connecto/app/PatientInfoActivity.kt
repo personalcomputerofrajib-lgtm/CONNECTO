@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.connecto.app.data.ConnectoDatabase
-import com.connecto.app.data.ReportEntity
+import com.connecto.app.data.ReportLog
 import com.connecto.app.databinding.ActivityPatientInfoBinding
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -38,7 +38,7 @@ class PatientInfoActivity : AppCompatActivity() {
                 val date = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault()).format(Date())
                 
                 // 1. Create and Save Report
-                val reportId = db.reportDao().insert(ReportEntity(
+                val reportId = db.reportDao().insert(ReportLog(
                     patientName = name,
                     patientAge = age,
                     patientGender = gender,

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.connecto.app.data.ConnectoDatabase
-import com.connecto.app.data.ReportEntity
+import com.connecto.app.data.ReportLog
 import com.connecto.app.databinding.ActivityHistoryBinding
 import kotlinx.coroutines.launch
 

@@ -2,48 +2,40 @@ package com.connecto.app.data
 
 import androidx.room.*
 
-/**
- * ENTITIES
- */
-
 @Entity(tableName = "selections")
-data class SelectionEntity(
+data class SelectionRecord(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val reportId: Long = 0L,
+    val reportId: Long = 0,
     val regionId: String = "",
     val commonName: String = "",
     val medicalName: String = "",
     val side: String = "",
     val orientation: String = "",
-    @ColumnInfo(name = "painType") val painType: String = "",
-    @ColumnInfo(name = "duration") val duration: String = "",
-    @ColumnInfo(name = "notes") val notes: String = ""
+    val painType: String = "",
+    val duration: String = "",
+    val notes: String = ""
 )
 
 @Entity(tableName = "reports")
-data class ReportEntity(
+data class ReportLog(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val patientName: String = "",
-    @ColumnInfo(defaultValue = "0") val patientAge: String = "0",
-    val patientGender: String = "Unknown",
-    @ColumnInfo(defaultValue = "0") val totalRegions: Int = 0,
+    val patientAge: String = "",
+    val patientGender: String = "",
+    val totalRegions: Int = 0,
     val createdAt: String = ""
 )
-
-/**
- * DAOS
- */
 
 @Dao
 interface SelectionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(selection: SelectionEntity): Long
+    suspend fun insert(selection: SelectionRecord): Long
 
     @Delete
-    suspend fun delete(selection: SelectionEntity)
+    suspend fun delete(selection: SelectionRecord)
 
     @Query("SELECT * FROM selections WHERE reportId = :reportId")
-    suspend fun getSelectionsForReport(reportId: Long): List<SelectionEntity>
+    suspend fun getSelectionsForReport(reportId: Long): List<SelectionRecord>
 
     @Query("DELETE FROM selections WHERE reportId = :reportId")
     suspend fun clearForReport(reportId: Long)
@@ -52,14 +44,14 @@ interface SelectionDao {
 @Dao
 interface ReportDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(report: ReportEntity): Long
+    suspend fun insert(report: ReportLog): Long
 
     @Query("SELECT * FROM reports ORDER BY createdAt DESC")
-    suspend fun getAllReports(): List<ReportEntity>
+    suspend fun getAllReports(): List<ReportLog>
 
     @Query("SELECT * FROM reports WHERE id = :id")
-    suspend fun getReportById(id: Long): ReportEntity?
+    suspend fun getReportById(id: Long): ReportLog?
 
     @Delete
-    suspend fun delete(report: ReportEntity)
+    suspend fun delete(report: ReportLog)
 }

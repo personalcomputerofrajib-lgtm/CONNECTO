@@ -1,17 +1,17 @@
 package com.connecto.app
 
-import com.connecto.app.data.SelectionEntity
+import com.connecto.app.data.SelectionRecord
 
 /**
  * In-memory session manager to hold current selections between Activities.
  * Replaced by Room DB in a future version for persistence.
  */
 object SessionManager {
-    var currentSelections: List<SelectionEntity> = emptyList()
+    var currentSelections: List<SelectionRecord> = emptyList()
 
     fun setFromDetections(results: List<com.connecto.app.engine.DetectionResult>) {
         currentSelections = results.mapIndexed { idx, r ->
-            SelectionEntity(
+            SelectionRecord(
                 reportId = 0L,
                 regionId = r.region.id,
                 commonName = r.region.commonName,

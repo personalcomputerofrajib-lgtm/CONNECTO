@@ -3,12 +3,12 @@ package com.connecto.app
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.connecto.app.data.ReportEntity
+import com.connecto.app.data.ReportLog
 import com.connecto.app.databinding.ItemHistoryBinding
 
 class HistoryAdapter(
-    private val reports: List<ReportEntity>,
-    private val onClick: (ReportEntity) -> Unit
+    private val reports: List<ReportLog>,
+    private val onClick: (ReportLog) -> Unit
 ) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ItemHistoryBinding) : RecyclerView.ViewHolder(binding.root)

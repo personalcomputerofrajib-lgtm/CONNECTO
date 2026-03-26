@@ -1,6 +1,6 @@
 package com.connecto.app.report
 
-import com.connecto.app.data.SelectionEntity
+import com.connecto.app.data.SelectionRecord
 
 /**
  * Rule-based sentence generator for the auto-report system.
@@ -8,7 +8,7 @@ import com.connecto.app.data.SelectionEntity
  */
 object ReportGenerator {
 
-    fun generateAutoSentences(selections: List<SelectionEntity>): String {
+    fun generateAutoSentences(selections: List<SelectionRecord>): String {
         if (selections.isEmpty()) return "No areas have been selected."
 
         val sb = StringBuilder()
@@ -32,7 +32,7 @@ object ReportGenerator {
         patientName: String,
         age: String,
         gender: String,
-        selections: List<SelectionEntity>,
+        selections: List<SelectionRecord>,
         date: String
     ): String {
         val sb = StringBuilder()

@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [SelectionEntity::class, ReportEntity::class], version = 2, exportSchema = false)
+@Database(entities = [SelectionRecord::class, ReportLog::class], version = 2, exportSchema = false)
 abstract class ConnectoDatabase : RoomDatabase() {
 
     abstract fun selectionDao(): SelectionDao

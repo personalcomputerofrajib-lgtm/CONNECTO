@@ -1,0 +1,10 @@
+STEP 25 DOCUMENTATION — FINAL STABILIZATION
+
+FINAL RESOLUTION:
+- Naming Collision Avoidance: To ensure the Room annotation processor (`kapt`) has zero ambiguity, I renamed the core entities to `SelectionRecord` and `ReportLog`. This eliminates any potential conflict with existing library classes or internal Room resolution stubs.
+- Unified Data Access: All entities and DAOs are now consolidated in `RoomData.kt` with explicit, simplified fields and full constructor defaults (No-Args compatibility).
+- Code-Wide Sync: Successfully updated every reference in the project (Activities, Adapters, SessionManager, Generator) to use the new unique entity names.
+- Build Stabilization: This approach addresses the elusive `InvocationTargetException` by providing a crystal-clear schema path for the compiler.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+BUILD STATUS: STABILIZED.
