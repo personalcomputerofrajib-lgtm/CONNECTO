@@ -1,0 +1,22 @@
+STEP 19 DOCUMENTATION
+
+PROMPT: (Build Failure - Malformed XML)
+
+ERROR OBSERVED:
+- Build failed in task `:app:mergeDebugResources`.
+- Error in activity_patient_info.xml: "A pseudo attribute name is expected."
+- Root cause: Typo in the XML declaration and mismatched tags due to a partial file edit.
+
+ACTIONS TAKEN:
+1. Fixed activity_patient_info.xml:
+   - Restored the correct `<?xml version="1.0" encoding="utf-8"?>` declaration.
+   - Cleaned up nested/mismatched tags (ScrollView/ConstraintLayout cleanup).
+   - Finalized HUD styling (grid background, monospace tech-labels).
+2. Verified activity_report.xml: Declaration is correct.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE MODIFIED:
+- app/src/main/res/layout/activity_patient_info.xml
+
+NEXT STEPS:
+- Push the fix and verify the build.
