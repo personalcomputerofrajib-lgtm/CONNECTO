@@ -1,0 +1,25 @@
+STEP 17 DOCUMENTATION
+
+PROMPT: (Manual Build Verification + HUD Request)
+
+ACTIONS TAKEN:
+1. Finalized Advanced HUD Logic:
+   - Wired Layer Switcher (Skin, Muscles, Organs, Skeletal) in MainActivity.
+   - Updated interaction mode highlighting for the new HUD sidebar.
+   - Fixed naming consistency in BodyMapView (selectedRegions -> detections).
+   - Added `getSelections()` helper to BodyMapView for report generation.
+2. Improved UI Feedback:
+   - Added `highlightLayer` logic to visually indicate the active anatomical layer in the HUD.
+   - Switched to monotonic fonts for HUD readouts in the UI.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE MODIFIED:
+- MainActivity.kt (Layer switching logic)
+- BodyMapView.kt (getSelections helper)
+
+FINAL STATUS OF HUD UPGRADE:
+- Immersive background: ✅
+- Data overlays (DNA, Gauges): ✅
+- Scanning Laser Line: ✅
+- Anatomical Layers: ✅
+- HUD Control Panel: ✅

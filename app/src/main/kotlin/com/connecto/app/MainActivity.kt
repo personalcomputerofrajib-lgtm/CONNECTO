@@ -73,6 +73,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Layer Switcher
+        val layerTabs = listOf(binding.tabSkin, binding.tabMuscles, binding.tabOrgans, binding.tabBones)
+        layerTabs.forEachIndexed { index, textView ->
+            textView.setOnClickListener {
+                val layer = BodyMapView.AnatomicalLayer.values()[index]
+                binding.bodyMapView.currentLayer = layer
+                highlightLayer(index, layerTabs)
+            }
+        }
+
         // Tap mode
         binding.btnTap.setOnClickListener {
             binding.bodyMapView.interactionMode = BodyMapView.InteractionMode.TAP
@@ -89,20 +99,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnMulti.setOnClickListener {
             binding.bodyMapView.interactionMode = BodyMapView.InteractionMode.MULTI_SELECT
             highlightMode(2)
-        }
-
-        // Clear
-        binding.btnClear.setOnClickListener {
-            binding.bodyMapView.clearSelections()
-            binding.regionInfoCard.visibility = View.GONE
-        }
-
-        // Undo
-        binding.btnUndo.setOnClickListener {
-            binding.bodyMapView.undoLastSelection()
-            val count = binding.bodyMapView.getSelections().size
-            binding.selectionCount.text = "$count area(s) selected"
-            if (count == 0) binding.regionInfoCard.visibility = View.GONE
         }
 
         // Generate Report
@@ -130,5 +126,17 @@ class MainActivity : AppCompatActivity() {
         binding.btnTap.setBackgroundColor(if (active == 0) activeColor else inactiveColor)
         binding.btnPaint.setBackgroundColor(if (active == 1) activeColor else inactiveColor)
         binding.btnMulti.setBackgroundColor(if (active == 2) activeColor else inactiveColor)
+    }
+
+    private fun highlightLayer(active: Int, tabs: List<android.widget.TextView>) {
+        tabs.forEachIndexed { i, tv ->
+            if (i == active) {
+                tv.text = " [ ${tv.text.toString().trim().replace("[","").replace("]","")} ] "
+                tv.setTextColor(Color.parseColor("#00FFCC"))
+            } else {
+                tv.text = tv.text.toString().trim().replace("[","").replace("]","")
+                tv.setTextColor(Color.parseColor("#446677"))
+            }
+        }
     }
 }
