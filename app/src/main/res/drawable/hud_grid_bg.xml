@@ -23,11 +23,11 @@
         </shape>
     </item>
 
-    <!-- Hexagonal / Dots overlay (simulated) -->
+    <!-- Procedural Grid overlay -->
     <item>
         <bitmap
-            android:src="@drawable/hex_pattern_tile"
+            android:src="@drawable/ic_grid_pattern"
             android:tileMode="repeat"
-            android:alpha="0.1" />
+            android:alpha="0.2" />
     </item>
 </layer-list>
