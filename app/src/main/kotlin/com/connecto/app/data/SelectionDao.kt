@@ -5,14 +5,14 @@ import androidx.room.*
 @Dao
 interface SelectionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(selection: SelectionRecord): Long
+    fun insert(selection: SelectionRecord): Long
 
     @Delete
-    suspend fun delete(selection: SelectionRecord)
+    fun delete(selection: SelectionRecord)
 
-    @Query("SELECT * FROM selections WHERE reportId = :reportId")
-    suspend fun getSelectionsForReport(reportId: Long): List<SelectionRecord>
+    @Query("SELECT * FROM selections WHERE reportId = :repId")
+    fun getSelectionsForReport(repId: Long): List<SelectionRecord>
 
-    @Query("DELETE FROM selections WHERE reportId = :reportId")
-    suspend fun clearForReport(reportId: Long)
+    @Query("DELETE FROM selections WHERE reportId = :repId")
+    fun clearForReport(repId: Long)
 }
