@@ -1,0 +1,28 @@
+STEP 22 DOCUMENTATION
+
+PROMPT: (Build Failure - Kapt/InvocationTargetException)
+
+ERROR OBSERVED:
+- Build failed in task `:app:kaptDebugKotlin`.
+- Error: `java.lang.reflect.InvocationTargetException (no error message)`.
+- Root cause: Likely an ambiguous constructor for SelectionEntity during Room code generation or a mismatch in layout binding.
+
+ACTIONS TAKEN:
+1. Room Compatibility Optimization:
+   - Explicitly providing all constructor fields (including defaults) in `SessionManager.kt` to assist Room's `kapt` processor in mapping the `SelectionEntity`.
+   - Verified that `SelectionEntity` has clear primary constructor fields for Room to hook into.
+2. Layout Refinement:
+   - Audited `activity_patient_info.xml` and `activity_main.xml` for missing view references.
+   - Added the missing `btnBack` to the Patient Info HUD for navigational consistency.
+3. Database Versioning:
+   - Incremented Room version to 2 and enabled `fallbackToDestructiveMigration` to handle the `totalRegions` field addition gracefully.
+
+GITHUB REPO: https://github.com/personalcomputerofrajib-lgtm/CONNECTO.git
+CODE MODIFIED:
+- SessionManager.kt
+- ConnectoDatabase.kt
+- activity_patient_info.xml
+- PatientInfoActivity.kt
+
+NEXT STEPS:
+- Push the build stabilization fixes and verify.

@@ -17,7 +17,10 @@ object SessionManager {
                 commonName = r.region.commonName,
                 medicalName = r.region.medicalName,
                 side = r.region.side.name,
-                orientation = r.region.orientation.name
+                orientation = r.region.orientation.name,
+                painType = "",
+                duration = "",
+                notes = ""
             )
         }
     }
