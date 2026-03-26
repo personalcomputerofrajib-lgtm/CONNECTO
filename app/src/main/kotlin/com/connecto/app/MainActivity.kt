@@ -118,6 +118,10 @@ class MainActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
+
+        binding.btnHistory.setOnClickListener {
+            startActivity(android.content.Intent(this, HistoryActivity::class.java))
+        }
     }
 
     private fun highlightMode(active: Int) {
