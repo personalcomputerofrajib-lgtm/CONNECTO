@@ -20,8 +20,9 @@ class HistoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val report = reports[position]
-        holder.binding.tvPatientName.text = report.patientName
-        holder.binding.tvDate.text = "${report.createdAt} · ${report.totalRegions} region(s)"
+        holder.binding.tvDate.text = "SCAN_DATE: ${report.createdAt}"
+        holder.binding.tvName.text = "PATIENT: ${report.patientName.uppercase()}"
+        holder.binding.tvDetail.text = "NODES_SELECTED: ${report.totalRegions}"
         holder.binding.root.setOnClickListener { onClick(report) }
     }
 
