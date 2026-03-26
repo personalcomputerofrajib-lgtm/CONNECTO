@@ -58,7 +58,7 @@
             android:layout_toStartOf="@id/btnToggleView"
             android:src="@android:drawable/ic_menu_recent_history"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="#00FFFF"
+            app:tint="#00FFFF"
             android:layout_marginEnd="12dp"/>
 
         <Button
@@ -100,9 +100,9 @@
         app:layout_constraintBottom_toTopOf="@id/regionInfoCard"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton android:id="@+id/btnTap" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_mylocation" android:background="#00FFCC" android:layout_marginBottom="8dp" android:tint="#000000"/>
-        <ImageButton android:id="@+id/btnPaint" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_edit" android:background="#333355" android:layout_marginBottom="8dp" android:tint="#FFFFFF"/>
-        <ImageButton android:id="@+id/btnMulti" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_add" android:background="#333355" android:tint="#FFFFFF"/>
+        <ImageButton android:id="@+id/btnTap" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_mylocation" android:background="#00FFCC" android:layout_marginBottom="8dp" app:tint="#000000"/>
+        <ImageButton android:id="@+id/btnPaint" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_edit" android:background="#333355" android:layout_marginBottom="8dp" app:tint="#FFFFFF"/>
+        <ImageButton android:id="@+id/btnMulti" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_add" android:background="#333355" app:tint="#FFFFFF"/>
 
     </LinearLayout>
 
